@@ -36,7 +36,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <div className="relative pb-24 pt-28">
+    <div className="relative pb-24 pt-32 md:pt-28">
       <SavannaBackdrop variant="page" />
       <article className="relative mx-auto max-w-3xl px-6">
         <Link

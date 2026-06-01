@@ -27,7 +27,7 @@ const navCards = [
 
 export function HomeHero() {
   return (
-    <section className="relative flex min-h-[88vh] flex-col justify-center overflow-hidden pt-24">
+    <section className="relative flex min-h-[88vh] flex-col justify-center overflow-hidden pt-32 md:pt-28">
       <SavannaBackdrop variant="home" />
       <div className="relative mx-auto w-full max-w-4xl px-6">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-ochre">

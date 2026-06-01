@@ -10,7 +10,7 @@ type PageShellProps = {
 
 export function PageShell({ title, description, children }: PageShellProps) {
   return (
-    <div className="relative min-h-[70vh] pb-24 pt-28">
+    <div className="relative min-h-[70vh] pb-24 pt-32 md:pt-28">
       <SavannaBackdrop variant="page" />
       <div className="relative mx-auto max-w-4xl px-6">
         <header className="mb-14">
