@@ -1,26 +1,147 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0908;
+  --foreground: #f5efe6;
+  --muted: #c4b8a8;
+  --subtle: #857a6e;
+  --border: #2a241c;
+  --surface: #14110e;
+  --surface-hover: #1c1814;
+  --savanna: #5c4a32;
+  --savanna-light: #7a6345;
+  --ochre: #e08a1a;
+  --ochre-hover: #f09a28;
+  --ochre-foreground: #0a0908;
+  --maasai-red: #c1272d;
+  --maasai-red-hover: #d4383e;
+  --maasai-blue: #1a4d8f;
+  --acacia: #4a5c3a;
+  --acacia-light: #6b8054;
+  --acacia-muted: #8a9e72;
+  /* aliases for existing class names */
+  --gold: var(--ochre);
+  --gold-hover: var(--ochre-hover);
+  --gold-foreground: var(--ochre-foreground);
+  --forest: var(--acacia);
+  --forest-light: var(--acacia-light);
+  --forest-muted: var(--acacia-muted);
+  --forest-deep: #2d3a24;
+  --khaki: var(--savanna-light);
+  --tan: #9a8468;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-savanna: var(--savanna);
+  --color-savanna-light: var(--savanna-light);
+  --color-ochre: var(--ochre);
+  --color-ochre-hover: var(--ochre-hover);
+  --color-ochre-foreground: var(--ochre-foreground);
+  --color-maasai-red: var(--maasai-red);
+  --color-maasai-red-hover: var(--maasai-red-hover);
+  --color-maasai-blue: var(--maasai-blue);
+  --color-acacia: var(--acacia);
+  --color-acacia-light: var(--acacia-light);
+  --color-acacia-muted: var(--acacia-muted);
+  --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-forest: var(--forest);
+  --color-forest-light: var(--forest-light);
+  --color-forest-muted: var(--forest-muted);
+  --color-khaki: var(--khaki);
+  --color-tan: var(--tan);
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-fraunces);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+.weave-rule {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  width: 2rem;
+  padding-bottom: 3px;
+}
+
+.weave-rule span {
+  display: block;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.weave-rule span:nth-child(1) {
+  width: 100%;
+  background: var(--ochre);
+}
+
+.weave-rule span:nth-child(2) {
+  width: 72%;
+  background: var(--ochre);
+  opacity: 0.85;
+}
+
+.weave-rule span:nth-child(3) {
+  width: 48%;
+  background: var(--acacia);
+  opacity: 0.7;
+}
+
+.flow-line {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--ochre) 0%,
+    var(--savanna-light) 45%,
+    var(--acacia) 75%,
+    transparent 100%
+  );
+}
+
+.shuka-band {
+  height: 5px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ochre) 0,
+    var(--ochre) 14px,
+    var(--background) 14px,
+    var(--background) 18px,
+    var(--acacia) 18px,
+    var(--acacia) 22px,
+    var(--savanna) 22px,
+    var(--savanna) 36px,
+    var(--background) 36px,
+    var(--background) 40px,
+    var(--savanna-light) 40px,
+    var(--savanna-light) 44px
+  );
+}
+
+::selection {
+  background: rgb(224 138 26 / 0.45);
+  color: var(--foreground);
 }
